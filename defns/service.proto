@@ -1,0 +1,16 @@
+// required for gRPC
+syntax = "proto3";
+
+// this is important, without it the package name defaults to the name of the file
+option go_package = "defns";
+
+// just because we import this doesn't mean that the definitions included are defined in the generated code
+import "models.proto";
+
+service Sample {
+    // fairly straightforward
+    rpc Greet(Greetee) returns (GreetResponse);
+
+    // this gets interesting in the implementation
+    rpc LifoEcho(stream Val) returns (stream Val);
+}

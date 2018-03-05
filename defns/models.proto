@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+// this is important, without it the package name defaults to the name of the file
+option go_package = "defns";
+
+message Greetee {
+    string first_name = 1;
+    string last_name = 2;
+}
+
+message GreetResponse {
+    string greeting = 1;
+}
+
+message Val {
+    string label = 1;
+    int32 value = 2;
+}
